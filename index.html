@@ -379,11 +379,30 @@
     margin-bottom: 24px;
   }
 
+  /* FLOATING ICONS */
+  .floating-icons { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; }
+  .fi { position: absolute; font-size: 28px; opacity: 0.12; animation: floatUp 8s infinite linear; }
+  .fi1 { left: 5%; animation-delay: 0s; font-size: 32px; }
+  .fi2 { left: 15%; animation-delay: 1.5s; font-size: 24px; }
+  .fi3 { left: 75%; animation-delay: 0.8s; font-size: 20px; }
+  .fi4 { left: 85%; animation-delay: 2.5s; font-size: 36px; }
+  .fi5 { left: 55%; animation-delay: 3.5s; font-size: 22px; }
+  .fi6 { left: 40%; animation-delay: 5s; font-size: 28px; }
+  @keyframes floatUp { 0% { transform: translateY(120%) rotate(0deg); opacity: 0; } 10% { opacity: 0.12; } 90% { opacity: 0.12; } 100% { transform: translateY(-20%) rotate(20deg); opacity: 0; } }
+  .hero-tagline { font-family: 'DM Serif Display', serif; font-style: italic; font-size: clamp(14px, 2.5vw, 18px); color: rgba(255,255,255,0.75); margin-bottom: 14px; position: relative; z-index: 1; }
+  .hero-sub { color: rgba(255,255,255,0.9); font-size: 15px; font-weight: 500; margin-bottom: 20px; position: relative; z-index: 1; }
+  .dental-banner { display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 16px 24px; margin-top: 28px; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; backdrop-filter: blur(6px); }
+  .dental-item { text-align: center; padding: 0 12px; }
+  .dental-icon { font-size: 26px; margin-bottom: 4px; }
+  .dental-label { font-size: 11px; color: rgba(255,255,255,0.85); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+  .dental-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.2); }
+
   @media (max-width: 600px) {
     .section-card { padding: 20px 16px; }
     .options-grid { grid-template-columns: 1fr 1fr; }
     .scale-btn { width: 34px; height: 40px; font-size: 13px; }
     .hero { padding: 36px 16px 48px; }
+    .dental-divider { display: none; }
   }
 </style>
 </head>
@@ -391,13 +410,47 @@
 
 <!-- HERO -->
 <div class="hero">
+  <div class="floating-icons">
+    <span class="fi fi1">🦷</span>
+    <span class="fi fi2">🩺</span>
+    <span class="fi fi3">💉</span>
+    <span class="fi fi4">🦷</span>
+    <span class="fi fi5">🩺</span>
+    <span class="fi fi6">🦷</span>
+  </div>
   <div class="hero-badge">🇮🇳 India-Wide Survey 2026</div>
-  <h1>Indian Dentist<br><span>Reality & Career Survey</span></h1>
-  <p class="hero-desc">India ke dentists ki real professional life ko samajhne ke liye ye survey banaya gaya hai. Income, stress, growth, clinical challenges aur future opportunities se related honest responses share karein.</p>
+  <div class="hero-tagline">"Behind Every Smile, There's a Dentist Fighting Stress."</div>
+  <h1>The Real Truth of<br><span>Dentistry in India</span></h1>
+  <p class="hero-desc">Share your honest experience about <strong style="color:#c8f0e8">income, stress, and career growth.</strong><br>
+  This survey represents the <strong style="color:#c8f0e8">true voice of dentists across India 🇮🇳</strong></p>
+  <p class="hero-sub">👇 Your feedback truly matters. Be honest. Be heard.</p>
   <div class="hero-meta">
-    <span>⏱ 3–5 Minutes</span>
-    <span>🔒 Anonymous</span>
+    <span>⏱ Only 3 Minutes</span>
+    <span>🔒 100% Anonymous</span>
     <span>🦷 For Dentists Only</span>
+  </div>
+  <!-- Dental SVG -->
+  <div style="margin:24px auto 0;position:relative;z-index:1;max-width:420px;">
+    <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+      <g transform="translate(20,5)"><path d="M0,22 C0,9 7,0 18,0 C23,0 27,3 32,3 C37,3 41,0 46,0 C57,0 64,9 64,22 C64,45 59,63 55,72 C52,79 49,82 46,82 C43,82 41,77 39,71 C37,64 37,64 35,71 C33,77 31,82 28,82 C25,82 22,79 19,72 C14,63 0,45 0,22 Z" fill="rgba(255,255,255,0.88)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/><path d="M12,20 C17,26 27,26 32,20 C37,14 46,20 52,20" fill="none" stroke="rgba(10,110,94,0.25)" stroke-width="1.5" stroke-linecap="round"/></g>
+      <g transform="translate(100,20)"><path d="M18,0 C7,0 0,7 0,16 C0,26 4,38 7,48 C10,56 13,60 16,60 C19,60 20,55 21,48 C22,41 22,41 23,48 C24,55 25,60 28,60 C31,60 34,56 37,48 C40,38 44,26 44,16 C44,7 35,0 26,0 Z" fill="rgba(255,255,255,0.7)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/></g>
+      <g transform="translate(168,4)"><circle cx="18" cy="18" r="15" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/><line x1="18" y1="33" x2="18" y2="78" stroke="rgba(255,255,255,0.75)" stroke-width="3" stroke-linecap="round"/><rect x="14" y="76" width="8" height="12" rx="4" fill="rgba(255,255,255,0.55)"/></g>
+      <g transform="translate(222,0)"><rect x="6" y="0" width="8" height="16" rx="4" fill="rgba(255,255,255,0.5)"/><line x1="10" y1="16" x2="10" y2="68" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/><path d="M10,68 Q18,80 14,90" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/></g>
+      <g transform="translate(258,8)"><rect x="7" y="0" width="13" height="46" rx="6" fill="rgba(255,255,255,0.6)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/><rect x="11" y="7" width="5" height="22" rx="2.5" fill="rgba(200,240,232,0.45)"/><line x1="13" y1="46" x2="13" y2="70" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round"/><path d="M11,70 L15,70 L13,80 Z" fill="rgba(255,255,255,0.6)"/></g>
+      <g transform="translate(308,5)"><path d="M0,22 C0,9 7,0 18,0 C23,0 27,3 32,3 C37,3 41,0 46,0 C57,0 64,9 64,22 C64,45 59,63 55,72 C52,79 49,82 46,82 C43,82 41,77 39,71 C37,64 37,64 35,71 C33,77 31,82 28,82 C25,82 22,79 19,72 C14,63 0,45 0,22 Z" fill="rgba(255,255,255,0.88)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/><path d="M12,20 C17,26 27,26 32,20 C37,14 46,20 52,20" fill="none" stroke="rgba(10,110,94,0.25)" stroke-width="1.5" stroke-linecap="round"/></g>
+    </svg>
+  </div>
+
+  <div class="dental-banner">
+    <div class="dental-item"><div class="dental-icon">🦷</div><div class="dental-label">Income Reality</div></div>
+    <div class="dental-divider"></div>
+    <div class="dental-item"><div class="dental-icon">😓</div><div class="dental-label">Work Stress</div></div>
+    <div class="dental-divider"></div>
+    <div class="dental-item"><div class="dental-icon">📈</div><div class="dental-label">Career Growth</div></div>
+    <div class="dental-divider"></div>
+    <div class="dental-item"><div class="dental-icon">🧠</div><div class="dental-label">Mental Health</div></div>
+    <div class="dental-divider"></div>
+    <div class="dental-item"><div class="dental-icon">🔮</div><div class="dental-label">Future Plans</div></div>
   </div>
 </div>
 
