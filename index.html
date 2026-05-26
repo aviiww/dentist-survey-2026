@@ -484,6 +484,15 @@
     </div>
 
     <div class="question">
+      <label><span class="q-num">2</span> WhatsApp / Phone Number <span style="color:#e53e3e;font-size:13px;">* Required</span></label>
+      <div style="position:relative;">
+        <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:#718096;font-weight:600;">+91</span>
+        <input type="tel" id="phoneInput" placeholder="Enter 10-digit mobile number" maxlength="10" pattern="[0-9]{10}" style="padding-left:48px;" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+      </div>
+      <p style="font-size:12px;color:#718096;margin-top:6px;">📱 Used only for survey purposes. Will not be shared.</p>
+    </div>
+
+    <div class="question">
       <label><span class="q-num">2</span> Age Group</label>
       <div class="options-grid col2">
         <label class="option-item"><input type="radio" name="age"> Under 25</label>
@@ -893,6 +902,15 @@
   const totalSections = 6;
 
   function goTo(n) {
+    if (currentSection === 1 && n > 1) {
+      const phone = document.getElementById("phoneInput");
+      if (!phone || phone.value.length !== 10) {
+        phone.style.borderColor = "#e53e3e";
+        phone.focus();
+        phone.placeholder = "⚠️ Please enter valid 10-digit number!";
+        return;
+      } else { phone.style.borderColor = ""; }
+    }
     document.getElementById('sec' + currentSection).classList.remove('active');
     currentSection = n;
     document.getElementById('sec' + n).classList.add('active');
